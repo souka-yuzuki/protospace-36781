@@ -1,24 +1,43 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## usersテーブル
 
-* Ruby version
+| Column     | Type       | Options      |
+| ---------- | ---------- | ------------ |
+| email      | string     | null: false  |
+| password   | string     | null: false  |
+| name       | string     | null: false  |
+| profile    | text       | null: false  |
+| occupation | text       | null: false  |
+| position   | text       | null: false  |
 
-* System dependencies
 
-* Configuration
+### Association
+- has_many :prototypes
+- has_many :contents
 
-* Database creation
+## prototypesテーブル
 
-* Database initialization
+| Column         | Type           | Options     |
+| -------------- | -------------- | ----------- |
+| title          | string         | null: false |
+| catch_copy     | text           | null: false |
+| concept        | text           | null: false |
+| image          | ActiveStorage  |             |
+| user           | references     |             |
 
-* How to run the test suite
+### Association
+- has_many :contents
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+## contentsテーブル
 
-* Deployment instructions
+| Column         | Type           | Options     |
+| -------------- | -------------- | ----------- |
+| text           | text           | null: false |
+| user           | references     |             |
+| prototype      | references     |             |
 
-* ...
+### Association
+- belongs_to :prototype
+- belongs_to :user
