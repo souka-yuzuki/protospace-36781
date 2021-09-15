@@ -124,7 +124,7 @@ a {
   margin-bottom: 20px;
 }
 .greeting__link{
-  text-decoration: underline;
+  text-decoration: none;
 }
 .page-heading {
   font-size: 30px;
