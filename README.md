@@ -30,7 +30,7 @@
 - has_many :contents
 - belongs_to :user
 
-## contentsテーブル
+## commentsテーブル
 
 | Column         | Type           | Options     |
 | -------------- | -------------- | ----------- |
